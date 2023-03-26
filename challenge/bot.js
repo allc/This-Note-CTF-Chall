@@ -4,7 +4,7 @@ const puppeteer = require("puppeteer");
 
 const browserOptions = {
   headless: true,
-  executablePath: "/usr/bin/chromium-browser",
+  // executablePath: "/usr/bin/chromium-browser",
   args: [
     "--no-sandbox",
     "--disable-background-networking",
@@ -38,7 +38,7 @@ exports.visit = async (noteId) => {
     await page.click("#create");
 
     await page.goto("http://localhost:1337/notes/" + noteId, {
-      waitUntil: "networkidle2",
+      waitUntil: "networkidle0",
       timeout: 5000,
     });
 
