@@ -1,0 +1,16 @@
+doctype html
+head
+    title Note Created
+    include head.pug
+body
+    .container.center
+        h1 Your Note Has Been Created
+        form
+            .form-group
+                label(for="noteId") Note ID
+                input#noteId.form-control(type="text", name="noteId", value=noteId readonly)
+            .form-group
+                label(for="token") Token
+                input#token.form-control(type="text", name="token", value=token readonly)
+        p Token will be needed to update your note.
+        a(href=`/notes/${noteId}`) View Note

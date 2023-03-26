@@ -1,0 +1,17 @@
+doctype html
+head
+    title Index
+    include head.pug
+body
+    .container.center
+        h1 Welcome to Notes
+        form(method="post")
+            .form-group
+                label(for="note") Note
+                input#note.form-control(type="text", name="note", placeholder="I wonder what the flag is...")
+            button.btn.btn-primary#create(type="submit") Create Note
+        form(action="/login", method="post")
+            .form-group
+                label(for="token") Token
+                input#token.form-control(type="password", name="token", placeholder="token")
+            button.btn.btn-primary(type="submit") Login

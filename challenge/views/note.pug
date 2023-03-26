@@ -1,0 +1,19 @@
+doctype html
+head
+    title Note
+    include head.pug
+body
+    .container.center
+        h1 Note
+        form
+            .form-group
+                label(for="note") Note
+                input#note.form-control(type="text", name="note", value!=note readonly)
+        if myNote
+            h2 My Note
+            form(action=`/notes/${myNote['noteId']}`, method="post")
+                input(type="hidden", name="csrfToken", value=csrfToken)
+                .form-group
+                    label(for="myNote") My Note
+                    input#myNote.form-control(type="text", name="note", value!=myNote['content'])
+                button.btn.btn-primary(type="submit") Update My Note
