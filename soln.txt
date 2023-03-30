@@ -1,0 +1,9 @@
+Inject <style> tag with CSS selector #myNote[value^="Flag: pwned{<possible char>"] and set background to an attacker controlled URL to extract the flag one character a time. This process can be automated with a web server.
+
+Setup:
+- Need environment variable listed in example.env
+
+Files to distribute:
+- /challenge/
+- /Dockerfile
+- /supervisord.conf
